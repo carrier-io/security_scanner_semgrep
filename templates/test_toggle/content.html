@@ -1,0 +1,26 @@
+{% set integration_name = 'security_scanner_semgrep' %}
+{% set display_name = 'Semgrep' %}
+
+
+<Test-Integration-Item
+    integration_name="{{ integration_name }}"
+    display_name="{{ display_name }}"
+    :project_integrations="{{ project_integrations | list_pd_to_json }}"
+>
+    <template #settings="{selected_integration, is_selected, integration_data, on_set_data, on_clear_data}">
+        <scanner-semgrep
+            @register="register"
+            instance_name="{{ integration_name }}"
+            section="scanners"
+
+            @set_data="on_set_data"
+            @clear_data="on_clear_data"
+
+            :selected_integration="selected_integration"
+            :is_selected="is_selected"
+            :integration_data="integration_data"
+        ></scanner-semgrep>
+    </template>
+</Test-Integration-Item>
+
+
