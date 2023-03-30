@@ -1,0 +1,6 @@
+{
+  "name": "Carrier Security semgrep Plugin",
+  "version": "0.2",
+  "depends_on": ["integrations"],
+  "init_after": []
+}
