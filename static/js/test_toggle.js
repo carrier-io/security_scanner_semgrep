@@ -8,7 +8,7 @@ const semgrepIntegration = {
     computed: {
         body_data() {
             const {
-                description,
+                config,
                 is_default,
                 selected_integration: id,
                 ruleset,
@@ -17,7 +17,7 @@ const semgrepIntegration = {
                 timeout_threshold,
             } = this
             return {
-                description,
+                config,
                 is_default,
                 id,
                 ruleset,
@@ -66,6 +66,7 @@ const semgrepIntegration = {
 
         initialState: () => ({
             // toggle: false,
+            config: {},
             error: {},
             save_intermediates_to: '/data/intermediates/sast',
             ruleset: '/opt/semgrep/rulesets/findsecbugs.yml',
@@ -94,7 +95,7 @@ const semgrepIntegration = {
                         v-model="ruleset"
                         :class="{ 'is-invalid': error.ruleset }">
                     <div class="invalid-feedback">[[ error.ruleset ]]</div>
-                
+
                     <h9>Save intermediates to</h9>
                     <p>
                         <h13>Optional</h13>
@@ -139,4 +140,3 @@ const semgrepIntegration = {
 
 
 register_component('scanner-semgrep', semgrepIntegration)
-

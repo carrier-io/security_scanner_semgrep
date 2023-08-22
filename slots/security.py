@@ -8,7 +8,7 @@ class Slot:
     @web.slot(f'security_{section_name}_content')
     def toggle_content(self, context, slot, payload):
         project_id = self.context.rpc_manager.call.project_get_id()
-        project_integrations = context.rpc_manager.call.integrations_get_project_integrations_by_name(
+        project_integrations = context.rpc_manager.call.integrations_get_all_integrations_by_name(
             project_id,
             Slot.integration_name
         )
