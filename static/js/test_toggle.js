@@ -12,7 +12,7 @@ const semgrepIntegration = {
                 is_default,
                 selected_integration: id,
                 ruleset,
-                save_intermediates_to,
+                // save_intermediates_to,
                 timeout,
                 timeout_threshold,
             } = this
@@ -21,7 +21,7 @@ const semgrepIntegration = {
                 is_default,
                 id,
                 ruleset,
-                save_intermediates_to,
+                // save_intermediates_to,
                 timeout,
                 timeout_threshold,
 
@@ -68,10 +68,10 @@ const semgrepIntegration = {
             // toggle: false,
             config: {},
             error: {},
-            save_intermediates_to: '/data/intermediates/sast',
-            ruleset: '/opt/semgrep/rulesets/findsecbugs.yml',
-            timeout: 15,
-            timeout_threshold: 5,
+            // save_intermediates_to: '/data/intermediates/sast',
+            ruleset: '/opt/semgrep/rulesets/r2c-security-audit.yml',
+            timeout: 3600,
+            timeout_threshold: 1000,
         })
     },
     template: `
@@ -96,7 +96,7 @@ const semgrepIntegration = {
                         :class="{ 'is-invalid': error.ruleset }">
                     <div class="invalid-feedback">[[ error.ruleset ]]</div>
 
-                    <h9>Save intermediates to</h9>
+                    <!--<h9>Save intermediates to</h9>
                     <p>
                         <h13>Optional</h13>
                     </p>
@@ -104,7 +104,7 @@ const semgrepIntegration = {
                         placeholder=""
                         v-model="save_intermediates_to"
                         :class="{ 'is-invalid': error.save_intermediates_to }">
-                    <div class="invalid-feedback">[[ error.save_intermediates_to ]]</div>
+                    <div class="invalid-feedback">[[ error.save_intermediates_to ]]</div>-->
 
                     <div class="form-group form-row">
                         <div class="col-6">
